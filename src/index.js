@@ -1,5 +1,5 @@
-//Task 1 - uncomment to test 
-/*var firstname= prompt("Please enter youyr first name");
+//Task 1 
+var firstname= prompt("Please enter youyr first name");
 var lastname = prompt("Please enter your last name");
 var confirmMsg= `Is your Fullname ${firstname} ${lastname}`;
 var isConfirmed= confirm(confirmMsg)
@@ -7,7 +7,7 @@ if(isConfirmed) {
     var age = prompt("How old are you?")
     var stm = `Welcome ${firstname} ${lastname} you are ${age} years old!`
     document.write(stm)
-}*/
+}
 
 
 
