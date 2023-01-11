@@ -10,7 +10,6 @@ if(isConfirmed) {
 }
 
 
-
 //Task 2 - uncomment to test
 /*var num1 = Number(prompt("We're introducing the first release of an addition only calavulator, please enter a number"))
 var num2 = Number(prompt("please enter another number"))
