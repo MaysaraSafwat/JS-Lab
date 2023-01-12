@@ -1,3 +1,7 @@
+////MAKE SURE THE SCRIPT SRC IS ADJUSTED IN IDEX.HTML
+//--------------------------------------------------
+
+
 document.getElementById("task3").innerHTML = "BONUS";
 //PART2
 //--task1
