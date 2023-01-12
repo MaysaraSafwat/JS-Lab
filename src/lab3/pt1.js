@@ -57,17 +57,3 @@ document.getElementById("task2").addEventListener("click", function() {
 
    
 }})
-
-//PART2
-//--task1
-//Calculate t he Sum  an d  av erage Of the user e ntered 
-//v aluesAsk the user to  enter h o w m any  num ber he wants to  get the sum 
-// o fSav e the num ber i n arr aySho w him  the sum  and  av erage o f the entered  v alues
-
-//--task2
-//Create pho ne bo o k appAsk the user fo r o perat io n thro ug h J S pro m ptIf 
-//user enters “add”Ask him  fo r the nam e o f the co ntact and  pho n e num ber
-//Then create js o bject f o r that co ntact and a dd  it to  co ntacts array
-//Then ask him  fo r new o peratio n an d repeatIf user enters “search”Ask him  fo r so mething  to  search fo rGet the user in put a nd 
-// search in t he co ntacts  array  in  nam e and p ho ne Then sho w the 
-//user t he full  details o f th at co n tactThen ask him  fo r new o peratio n an d repeat
