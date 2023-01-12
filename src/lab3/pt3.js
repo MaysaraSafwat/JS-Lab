@@ -99,5 +99,30 @@ console.log(array.some(even));// true
 
 //10.map() : creates a new array that contains results of calling a provided function on every element
 const arr5 = [1, 4, 9, 16];
-const mapedArr= arr51.map(x => x * 2);
-console.log(mapedArr);//  Array [2, 8, 18, 32
+const mapedArr= arr5.map(x => x * 2);
+console.log(mapedArr);//  Array [2, 8, 18, 32]
+
+
+//---------------------------------------------------------------------------
+//Task3 -Write anested function and explain the closure-> lexical environment.
+//---------------------------------------------------------------------------
+//Lexical Environment : where something sits physically in the code you've written and it consists of two main components, the environment record and a reference to the outer (parent) 
+function closuretest() {
+    var ar=[];
+    for(i=0; i<3; i++){
+        ar.push(function(){
+            console.log(i);
+        })
+    }
+}
+var fn= closuretest(); //here closuretest finished execution and got poped of the execution stack but left a refrence to the variable i in it's place 
+
+fn[0]()//3 
+fn[1]()//3   
+fn[2]()//3
+
+// when fn gets invoked it looks to it's outer scope LEXICALLY and goes up the scope chain 
+// and finds out it's "parent" i.e closuretest has poped but left a variable i=3 and an array of 3 fuction so it takes it AS IS
+// explaining why all the three fnctions of fn only knows i as 3
+
+
