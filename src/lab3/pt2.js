@@ -1,3 +1,4 @@
+document.getElementById("task3").innerHTML = "BONUS";
 //PART2
 //--task1
 //Calculate the Sum  and  average Of the user entered 
@@ -68,3 +69,56 @@ switch(op) {
 }
 }while(flag)
 });
+
+//BONUS 
+//Area calculator Ask the user to  enter t he name of the shape
+// he wants to  calc area for Ask the user for the  
+//dimensio ns o f that sha peCalculate t he area an d  sho w it to  user
+
+document.getElementById("task3").addEventListener("click", function() {
+    var shape = prompt("please enter your desired shape");
+    var dim1= Number(prompt("please enter the first dimension"))
+    var dim2= Number(prompt("please enter the seconf dimension (optional if you chose circle or a square)"))
+    var s= shape.toLocaleLowerCase()
+    var area = 0;
+    switch(s) {
+        case 'circle':
+            area = 3.14*(dim1*dim1);
+            alert(`the area of your circle is ${area}`)
+            break;
+    
+        case 'rectangle':
+            area = dim1*dim2;
+            alert(`the area of your rectangle is ${area}`)
+            break;
+    
+        case 'square' :
+            area= dim1*dim1;
+            alert(`the area of your square is ${area}`)
+            break;  
+        case 'triangle' :
+            area= 0.5*dim1*dim2
+            alert(`the area of your triangle is ${area}`)
+            break;  
+       
+        case 'parallelogram' :
+            area= dim1*dim2
+            alert(`the area of your parallelogram is ${area}`)  
+            break;  
+
+         case 'ellipse' :
+            area=3.14* dim1*dim2
+            alert(`the area of your ellipse is ${area}`)  
+            break;
+
+         case 'trapezium' :
+            let dim3=  Number(prompt("please enter your third dimension (height)"));
+            area= 0.5*(dim1+dim2) * dim3
+            alert(`the area of your Trapezium is ${area}`)  
+            break;             
+
+        default : 
+        alert("Please enter a valid closed shape");
+        break;     
+        }
+    });
