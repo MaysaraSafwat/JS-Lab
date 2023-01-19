@@ -201,6 +201,7 @@ alert(`${person1.fullName}'s health rate is : ${person1.healthRate}`) */
 
   let person1 = Object.create(Person) 
   person1.init(oFullName, oAge, oMoney);
+  let hr= Number(prompt("how many meals do u eat a day?")
   person1.eat(hr);
   alert(`${person1.fullName}'s health rate is : ${person1.healthRate}`)
   console.log(person1); */ //note:  person1 doesn't own any of his properties, all came from proptotypal inheritance
