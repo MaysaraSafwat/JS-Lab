@@ -126,7 +126,7 @@ function fireEmployee () {
         alert("Hold your horses,There's no Employees");
     }
     else {
-        let e = prompt("type the poor employee's email you monster jk")
+        let e = prompt("type the email for the employee ypu want to fire")
         office.fire(e);
     }
 }
@@ -170,6 +170,5 @@ do{
         break;     
     }
     }while(flag) 
-
 
 
