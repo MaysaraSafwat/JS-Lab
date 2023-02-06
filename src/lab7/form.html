@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .d-flex-c{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: white;
+            padding: 5%;
+
+
+        }
+        .input{
+            height: 5vh;
+            width: 100%;
+            background-color: lightgray;
+            border-radius: 10px;
+            border: none;
+            padding: 4%;
+        }
+        .btn{
+            background-color: white;
+            border: 3px solid lightgreen;
+            color: lightgreen;
+            border-radius: 30px;
+            height: 5vh;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+    <div class="form-container">
+        <form>
+            <input type="text" name="username" value="" placeholder="Username"/>
+            <input type="password" name="password" value="" placeholder="password"/>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+<body>
+   <script>
+    //styling body
+    document.body.style.backgroundColor = 'lightgreen';
+    document.body.style.display = "flex";
+    document.body.style.alignItems = "center";
+    document.body.style.justifyContent = "center"
+
+    //selecting elemnts
+   let container = document.getElementsByClassName("form-container")[0];
+   let form = document.getElementsByTagName("form")[0];
+   let inputs = document.querySelectorAll("input");
+   let name= inputs[0]
+   let password=inputs[1]
+   let submitBtn = document.querySelector("button");
+
+    //styling elements with classList
+    container.style.width="350px"
+     form.classList.add("d-flex-c");
+     inputs.forEach(el=>{
+        el.classList.add("input")
+     })
+     submitBtn.classList.add("btn")
+
+     
+
+   
+   </script> 
+</body>
+</html>
