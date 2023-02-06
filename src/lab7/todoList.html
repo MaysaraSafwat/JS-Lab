@@ -11,6 +11,9 @@
             justify-content: center;
         }
         .todo-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             width : 50%;
             height: 50vh;
             padding: 4%;
@@ -20,30 +23,93 @@
         }
         .task{
             display: flex;
+            padding: 4%;
+            border-bottom: 1px solid lightgray;
+        }
+        .task button {
+            margin-left: 2%;
+            padding: 2% 4%;
+            border: none;
+            color: white;
+        }
+        .list{
+            background-color: white;
+            border-radius: 10px;
+            padding: 2%;
+            border: 1px solid lightgray;
+        }
+        .task div{
+            width: 60%;
+        }
+        .control-list{
+            display: flex;
+           justify-content: space-around;
+           align-items: center;
+        }
+        .control-list input{
+            height: 5vh;
+            width: 60%;
+            background-color: whitesmoke;
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 4%;
+        }
+        .control-list label{
+            font-size: 1.2em;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .control-list #add-task{
+            width: 20%;
+            background-color: rgb(64, 179, 251);
+            color: white;
+            padding: 2%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
    <div class="todo-container">
+     <div id="list">
+
+     </div>
+
+     <div class="control-list">
+      <label for="name">Task: </label>
+      <input id="task-name" name="name" type="text"/>
+      <button id="add-task">Add Task</button>
+     </div>
     
-    <button id="add-task">Add Task</button>
    </div>
 
    <script>
     //select elemnts
     let addBtn = document.getElementById("add-task");
-    let list = document.querySelector(".todo-container")
+    let list = document.getElementById("list");
+
+
+    //Add task event
     addBtn.addEventListener("click", handleClick)
     function handleClick () {
+        list.style.display = "block";
+        list.classList.add("list");
+
+        let taskName = document.getElementById("task-name").value
         let task = document.createElement("div");
+        let content = document.createElement("div")
             task.classList.add("task")
-            task.innerHTML = "New Task"
+            content.innerHTML = `${taskName}`
         let del = document.createElement("button");
-            del.innerHTML="Delete"
+            del.innerHTML="X"
+            del.style.backgroundColor = "#d32f2f"
         let complete = document.createElement("button");
             complete.innerHTML = "Complete"
-     task.appendChild(del);
+            complete.style.backgroundColor = "#4BB543"
+     task.appendChild(content);
      task.appendChild(complete);  
+     task.appendChild(del);
      list.appendChild(task);     
 
       
