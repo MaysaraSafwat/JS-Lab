@@ -31,13 +31,18 @@
             font-weight: bold;
             cursor: pointer;
         }
+        .card{
+            text-align: center;
+            background-color: white;
+            padding: 2%;
+        }
     </style>
 </head>
     <div class="form-container">
-        <form>
+        <form onsubmit="return handleSubmit()">
             <input type="text" name="username" value="" placeholder="Username"/>
             <input type="password" name="password" value="" placeholder="password"/>
-            <button type="submit">Submit</button>
+            <button type="submit">Login</button>
         </form>
     </div>
 <body>
@@ -64,8 +69,25 @@
      })
      submitBtn.classList.add("btn")
 
-     
-
+    //form submit logic
+   function handleSubmit() {
+        event.preventDefault();
+        let username = name.value;
+        let pswrd = password.value;
+        let card = document.createElement("div")
+         card.classList.add("card");
+        if( username !== "admin" || pswrd!=='123'){
+           card.style.color = "red"
+           card.innerHTML = "ACCESS DENIED! try again"
+           form.appendChild(card)
+        } else{
+          form.style.display = "none";
+           card.style.color = "green"
+           card.innerHTML = "WELCOME!"
+           container.appendChild(card)
+        }
+        return false;
+    }
    
    </script> 
 </body>
