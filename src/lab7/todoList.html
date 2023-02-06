@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .todo-container{
+            width : 50%;
+            height: 50vh;
+            padding: 4%;
+            background-color: rgb(231, 230, 230);
+            border-radius: 20px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        .task{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+   <div class="todo-container">
+    
+    <button id="add-task">Add Task</button>
+   </div>
+
+   <script>
+    //select elemnts
+    let addBtn = document.getElementById("add-task");
+    let list = document.querySelector(".todo-container")
+    addBtn.addEventListener("click", handleClick)
+    function handleClick () {
+        let task = document.createElement("div");
+            task.classList.add("task")
+            task.innerHTML = "New Task"
+        let del = document.createElement("button");
+            del.innerHTML="Delete"
+        let complete = document.createElement("button");
+            complete.innerHTML = "Complete"
+     task.appendChild(del);
+     task.appendChild(complete);  
+     list.appendChild(task);     
+
+      
+    }
+   </script>
+</body>
+</html>
