@@ -23,7 +23,8 @@
         }
         .task{
             display: flex;
-            padding: 4%;
+           align-items: center;
+            padding: 2%;
             border-bottom: 1px solid lightgray;
         }
         .task button {
@@ -35,7 +36,6 @@
         .list{
             background-color: white;
             border-radius: 10px;
-            padding: 2%;
             border: 1px solid lightgray;
         }
         .task div{
@@ -104,9 +104,15 @@
         let del = document.createElement("button");
             del.innerHTML="X"
             del.style.backgroundColor = "#d32f2f"
+            del.onclick = function (){
+                this.parentElement.style.display ="none"
+            }
         let complete = document.createElement("button");
             complete.innerHTML = "Complete"
             complete.style.backgroundColor = "#4BB543"
+            complete.onclick = function (){
+                this.parentElement.style.backgroundColor = "rgba(157, 255, 166, 0.5)"
+            }
      task.appendChild(content);
      task.appendChild(complete);  
      task.appendChild(del);
@@ -114,6 +120,7 @@
 
       
     }
+    
    </script>
 </body>
 </html>
