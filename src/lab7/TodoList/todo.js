@@ -9,7 +9,7 @@ function handlePageLoad (){
         });
     }
 }
-//select elemnts for add button event functionality
+//select elemnts for add task event functionality
 let addBtn = document.getElementById("add-task");
 let list = document.getElementById("list");
     list.classList.add("list")
