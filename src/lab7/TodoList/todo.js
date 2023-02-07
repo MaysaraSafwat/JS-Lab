@@ -4,7 +4,6 @@ function handlePageLoad (){
         console.log("empty")
     }else {
         Object.keys(localStorage).forEach(function(key){
-        console.log(localStorage.getItem(key));
          createTask(localStorage.getItem(key))
         });
     }
@@ -19,7 +18,6 @@ addBtn.addEventListener("click", handleClick)
 function handleClick () {
   let  taskName = document.getElementById("task-name").value
   localStorage.setItem(`${taskName}`, taskName);
-  console.log(localStorage);
   createTask(taskName);
 }
 
