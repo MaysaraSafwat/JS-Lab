@@ -3,15 +3,12 @@ let timerBtn = document.getElementById("timer");
 let setTimerBtn = document.getElementById("setTimer");
 let timer  = document.querySelector("form")
 
-timerBtn.addEventListener("click", function(){
-    timer.style.display = "block"
-})
-
+//For displaying digital clock
 function displayTime(){
     var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
+    var h = date.getHours(); 
+    var m = date.getMinutes(); 
+    var s = date.getSeconds(); 
     var session = "AM";
     
     if(h == 0){
@@ -37,21 +34,24 @@ function displayTime(){
 
 displayTime();
 
-function handleSubmit() {
-    // var date = new Date();
-    // var h = date.getHours(); // 0 - 23
-    //   h > 12 ? h-=12 : h == 0 ? h = 12 : h
+// For setting a timer
 
-    // var m = date.getMinutes();
-    //console.log(h , m)
+timerBtn.addEventListener("click", function(){
+    timer.style.display = "block"
+})
+
+function handleSetTimer() {
      let hrs = document.querySelectorAll("input")[0].value 
      !hrs ? hrs = 0 : hrs
+
      let mins = document.querySelectorAll("input")[1].value 
      !mins ? mins = 0 : mins
-     console.log(hrs , mins)
+
+    
     let t = ((hrs * 60) + mins) * 60000
+
     function timerAlert () {
-      alert("weeewaaaerrrrwaaaa")
+      alert("Timer is over")
     }
      setTimeout(timerAlert , t)
     
