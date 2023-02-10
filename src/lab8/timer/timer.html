@@ -27,15 +27,36 @@
             gap: 5px;
             width: 250px;
             text-align: center;
+            border-radius: 20px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
         form input {
-            width: 50px;
+            width: 40%;
+            background-color: rgba(230,166,190, 0.3);
+            color: rosybrown;
+            border: none;
+            border-radius: 20px;
+            padding: 3% 5%;
+        }
+        button {
+            margin: 10%;
+            padding:4% 6%;
+            background-color: transparent;
+            border: 2px solid wheat;
+            border-radius: 20px;
+            color: wheat;
+            cursor: pointer;
+            width: 150px;
+        }
+        #setTimer {
+            color: rosybrown;
+            border: 2px solid rosybrown;
         }
     </style>
 </head>
 <body>
     <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
-    <div>
+    <div style="text-align: center;">
         <button id="timer">Set Timer</button>
         <form onsubmit="return handleSubmit()">
             <input type="number" placeholder="hours" min="0"/>
