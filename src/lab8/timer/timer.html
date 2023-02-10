@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock/Timer</title>
+    <style>
+        body {
+            background: rosybrown;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clock {
+            color: wheat;
+            font-size: 60px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+        }
+        form{
+            display: none;
+            background-color: white;
+            padding: 10%;
+            margin-top: 10%;
+            gap: 5px;
+            width: 250px;
+            text-align: center;
+        }
+        form input {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    <div>
+        <button id="timer">Set Timer</button>
+        <form onsubmit="return handleSubmit()">
+            <input type="number" placeholder="hours" min="0"/>
+            <span> : </span>
+            <input type="number" placeholder="mins" min="0" max="60"/>
+            <button id="setTimer" type="submit">Set</button>
+        </form>
+    </div>
+  <script src="./timer.js"></script>  
+</body>
+</html>
