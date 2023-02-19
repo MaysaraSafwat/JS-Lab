@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Poppins:wght@400;500;700&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        body{
+            text-align: center;
+            padding: 3%;
+            font-family: 'Prata', serif;
+            color:rgb(71, 71, 71)
+      
+        }
+        .container{
+            padding: 3%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        div{
+            width:20%;
+            text-align: center;
+            background-color: lavender;
+            padding: 3% 2%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 20px;
+            margin: 3%;
+        }
+        img {
+            border-radius: 50%;
+            margin-bottom: 3%;
+        }
+        p{
+            margin-top: 3%;
+            border-top: 1px solid rgb(164, 164, 164);
+            padding: 5% 3%;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body onload="getData()">
+    <h2> Our Beloved Team</h2>
+    <section class="container"></section>
+    <script>
+        const getData = async()=>{
+            try{
+                const Response = await fetch("https://reqres.in/api/users?page=2")
+                const users = await Response.json()
+                users.data.map(el=> {
+                    createUser(el)
+                })
+            }catch(err){
+                console.log(err)
+            }
+                
+        }
+        function createUser(user) {
+          let page = document.getElementsByTagName("section")[0]  
+          let usercard = document.createElement("div")
+          let userImg = document.createElement("img")
+          userImg.setAttribute("src", user.avatar);
+          let userName = document.createElement("p")
+          userName.innerHTML =`${user.first_name} ${user.last_name}`
+          usercard.append(userImg);
+          usercard.append(userName)
+          page.append(usercard)
+        }
+    </script>
+</body>
+</html>
